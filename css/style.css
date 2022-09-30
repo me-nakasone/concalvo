@@ -110,7 +110,6 @@ h5 {
     letter-spacing: 1px;
 }
 
-
 .button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
@@ -124,6 +123,25 @@ h5 {
     padding: 0.5em 1.9em;
     border-radius: 0.5em;
     margin-top: 1.3em;
+}
+
+.button__send {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-align: right;
+    background-color: #ffc736;
+    border: none;
+    padding: 0.5em 1.9em;
+    border-radius: 0.5em;
+    margin-top: 1.3em;
+}
+
+.button:hover {
+    color: #f8b409;
+    background-color: #fee7b1;
 }
 
 section article {
@@ -255,39 +273,38 @@ footer ul li {
     font-size: 0.8em;
 }
 
-.nosotros__all {
+.nosotros__main {
     margin: 4em 1em 4em 8.7em;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
     line-height: 2.2em;
     letter-spacing: 1px;
     display: grid;
-    grid-template-areas: 'titulo foto'
-    'principal foto'
-    'principal secundario';
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 2.5rem;
 }
 
 .nosotros__titulo {
     margin-bottom: 0.8em;
-    grid-area: titulo;
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
 }
 
-.nosotros__main {
-    grid-area: principal;
+.nosotros__text {
 }
 
 .nosotros__aside {
-    margin: 4em 8.7em 4em 1em;
+    margin: 0em 8.7em 4em 1em;
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     line-height: 1.8em;
     letter-spacing: 0.8px;
-    grid-area: secundario;
 }
 
 .nosotros__aside-foto {
-    width: 35%;
-    grid-area: foto;
+    width: 100%;
 }
 
 .productos__nav ul {
@@ -369,6 +386,7 @@ footer ul li {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     font-weight: 300;
+    padding: 0.5rem 0rem 3rem;
 }
 
 .contacto__datos {
@@ -390,9 +408,17 @@ footer ul li {
 
 .contacto__form-all {
     margin: 3em 0em;
+    display: grid;
+    grid-template-areas: 
+        "nombre msg"
+        "email mensaje"
+        "telefono mensaje"
+        "receta mensaje"
+    ;
+    grid-template-columns: auto auto;
 }
 
-.contacto__form-input {
+.contacto__form-input1 {
     margin: 1em;
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
@@ -401,6 +427,35 @@ footer ul li {
     outline: 0;
     border-bottom: 1px solid #c8c8c8;
     width: 18em;
+    grid-area: nombre;
+}
+
+.contacto__form-input2 {
+    margin: 1em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #c8c8c8;
+    width: 18em;
+    grid-area: telefono;
+}
+
+.contacto__form-input3 {
+    margin: 1em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #c8c8c8;
+    width: 18em;
+    grid-area: email;
+}
+
+.contacto__form-input4 {
+    grid-area: receta;
 }
  
 .contacto__form-msg {
@@ -409,6 +464,15 @@ footer ul li {
     line-height: 1.5em;
     width: 18em;
     border: 1px solid #c8c8c8;
+    grid-area: mensaje;
+}
+
+.contacto__form-msgtext {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 18em;
+    grid-area: msg;
 }
 
 .contacto__map {
